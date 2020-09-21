@@ -1,0 +1,34 @@
+﻿<Window x:Class="FileDuplicate.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FileDuplicate"
+        mc:Ignorable="d"
+        Title="Find Duplicate" Height="500" Width="800" WindowStartupLocation="CenterScreen" Background="LightCyan">
+    <Canvas>
+        <Label Name="lblDir" FontSize="20" Height="40" Width="600" Canvas.Left="100" Canvas.Top="50" Foreground="Red"
+               Content="Your directory _to find duplicate File" HorizontalContentAlignment="Center" FontWeight="Bold"
+               Target="{Binding ElementName=txtInput}">
+        </Label>
+        <TextBox Name="txtInput" Height="40" FontSize="23" Width="600" Canvas.Left="100" Canvas.Top="100"
+                 Foreground="Blue" Background="Yellow" Loaded="txtInput_Loaded" GotFocus="txtInput_GotFocus">
+        </TextBox>
+        <Button Name="btnFind" Height="40" Width="100" FontSize="17" Canvas.Top="150" Canvas.Left="350" Foreground="Black"
+                Background="Violet" Click="btnFind_Click">_Find
+        </Button>
+        <TextBox Name="txtResult" Height="200" Width="500" Canvas.Left="150" Canvas.Top="220" FontSize="17"
+                 HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+        </TextBox>
+
+        <Menu Height="20" Width="800" Background="Cyan">
+            <MenuItem Header="_File">
+                <MenuItem Header="_Exit" Click="Exit_Click"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="_Help">
+                <MenuItem Header="_About" Click="About_Click"></MenuItem>
+                <MenuItem Header="_Use" Click="Use_Click"></MenuItem>
+            </MenuItem>
+        </Menu>
+    </Canvas>
+</Window>
